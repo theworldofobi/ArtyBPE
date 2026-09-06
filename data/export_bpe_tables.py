@@ -1,6 +1,9 @@
 import json
 import sys
 import math
+from typing import Optional, Tuple
+
+Slot = Optional[Tuple[int, int, int, int]]
 
 TABLE_LOAD_FACTOR = 0.4
 
@@ -42,7 +45,7 @@ def hash_pair(left, right, size):
   return ((left * 2654435761) ^ (right * 40503761)) & (size - 1)
 
 def place_with_linear_probing(pair_table, table_size):
-  slots = [None] * table_size
+  slots: list[Slot] = [None] * table_size
   max_probe = 0
 
   for (left, right), (rank, merged_id) in pair_table.items():
