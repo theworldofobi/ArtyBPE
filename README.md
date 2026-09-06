@@ -63,3 +63,18 @@ with open("merge_table.mem", "w") as f:
       else:
         left, right, rank, merged_id = slot # HERE - "Never" is not iterable
 ```
+
+And then I looked at my `max_probe=8` and felt like that was too small so I decided to use cuckoo hashing instead
+
+```
+(venv) (base) obiuto@obiuto data ±|main ✗|→ python export_bpe_tables.py 
+vocab size:       3995 (id_bits=12)
+base alphabet:    85 chars
+merge rules:      3906 (rank_bits=12)
+pair table:       8192 slots
+table_a: 38% full, table_b: 9.204102% full,
+placed on seed attempt 0
+verify_roundtrip: all 3906 entries verified
+
+wrote base_alphabet.mem, merge_table_a.mem, merge_table_b.mem, and bpe_params.svh
+```

@@ -1,7 +1,13 @@
 `define BPE_ID_BITS       12
 `define BPE_RANK_BITS     12
 `define BPE_REC_BITS      49
-`define BPE_TABLE_SIZE    16384
+`define BPE_TABLE_SIZE    8192
 `define BPE_VOCAB_SIZE    3995
 `define BPE_NUM_MERGES    3906
 `define BPE_UNK_ID        0
+`define BPE_SEED_A0       32'h5D15D903
+`define BPE_SEED_A1       32'h533E7401
+`define BPE_SEED_A2       32'h21916548
+`define BPE_SEED_B0       32'h3D19C815
+`define BPE_SEED_B1       32'h50F4FB89
+`define BPE_SEED_B2       32'h9F00AD83
