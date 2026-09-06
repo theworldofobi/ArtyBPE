@@ -24,4 +24,3 @@ Generating train split: 100%|█████████████████
 [00:00:00] Count pairs                    ███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 4151     /     4151
 [00:00:00] Compute merges                 ███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████ 3906     /     3906
 ```
-3. Need to format the JSON vocab into a trie transition table for my BRAM module. Important to make sure it can fit on the target device first which is 4.86 Mbits of memory. In order for it to fit and not consume the majority of resources I'm using a double-array trie structure (a la Darts/MeCab)
