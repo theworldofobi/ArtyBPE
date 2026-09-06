@@ -89,7 +89,7 @@ def verify_roundtrip(pair_table, slots, table_size):
 if __name__ == "__main__":
   vocab, merges = load_bpe_model("vocab.json")
   unk_id = vocab.get("[UNK]", 0)
-  base_chars = {t: i for t, i in vocab.items if len(t) == 1}
+  base_chars = {t: i for t, i in vocab.items() if len(t) == 1}
   pair_table = build_pair_table(vocab, merges)
 
   vocab_size = len(vocab)
