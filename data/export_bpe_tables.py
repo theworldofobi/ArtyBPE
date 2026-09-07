@@ -178,6 +178,7 @@ if __name__ == "__main__":
     f.write(f"`define BPE_RANK_BITS     {rank_bits}\n")
     f.write(f"`define BPE_REC_BITS      {rec_bits}\n")
     f.write(f"`define BPE_TABLE_SIZE    {table_size}\n")
+    f.write(f"`define BPE_TABLE_A_BITS  {table_size.bit_length() - 1}\n")
     f.write(f"`define BPE_VOCAB_SIZE    {vocab_size}\n")
     f.write(f"`define BPE_NUM_MERGES    {num_merges}\n")
     f.write(f"`define BPE_UNK_ID        {unk_id}\n")

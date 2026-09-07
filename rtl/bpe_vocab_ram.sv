@@ -27,5 +27,22 @@ module bpe_vocab_ram (
   output logic [1:0]  s_axil_bresponse
 );
 
+  localparam int unsigned TABLE_A_BASE = 32'h0000_1000;
+  localparam int unsigned TABLE_B_BASE = TABLE_A_BASE + (`BPE_TABLE_SIZE * 8);
+  localparam int SLOT_BITS = `BPE_TABLE_A_BITS;
+
+  (* ram_style = "block" *) logic [`BPE_ID_BITS-1:0]   base_mem [0:255];
+  (* ram_style = "block" *) logic [`BPE_REC_BITS-1:0]  table_a  [0:`BPE_TABLE_SIZE-1];
+  (* ram_style = "block" *) logic [``BPE_REC_BITS-1:0] table_b  [0:`BPE_TABLE_SIZE-1];
+
+  initial begin
+    $readmemh("/data/base_alphabet.mem", base_mem);
+    $readmemh("/data/merge_table_a.mem", table_a);
+    $readmemh("/data/merge_table_b.mem", table_b);
+  end
+
+  
+
+
 
 endmodule
